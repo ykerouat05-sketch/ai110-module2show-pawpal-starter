@@ -106,10 +106,47 @@ tests\test_pawpal.py ..................................                         
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+users can:
+add pets to their accounts
+schedule taasks for each pet
+view a fully daily schedule
+filter tasks by pet or completion status 
 
+1. <!-- Describe this step --> add a, pet 
+2. <!-- Describe this step --> schedule multiple tasks out of order 
+3. <!-- Describe this step --> view the schedule sorted by time
+4. <!-- Describe this step --> filter tasks ofr a specific pet
+5. <!-- Add more steps as needed --> observe conflict warnings if taks overlap
+
+Daily plan for Alice — 2026-07-01
+  08:00-08:10  Feed Whiskers (10 min) [high]
+  08:10-08:20  Feed Mohsen (10 min) [high]
+  08:20-08:35  Feed Buddy (15 min) [high]
+  08:35-09:05  Walk Buddy (30 min) [high]
+  09:05-09:20  Clean Mohsen's cage (15 min) [medium]
+  09:20-09:40  Play with Whiskers (20 min) [medium]
+
+Scheduled 6 of 6 task(s) within 120 min, ordered by priority then owner preference.
+
+All tasks sorted by time of day:
+  08:00  Feed Buddy [completed]
+  08:15  Feed Whiskers [pending]
+  09:00  Feed Mohsen [pending]
+  12:00  Play with Whiskers [pending]
+  17:30  Walk Buddy [pending]
+  --:--  Clean Mohsen's cage [pending]
+
+Pending tasks: Walk Buddy, Feed Whiskers, Play with Whiskers, Feed Mohsen, Clean Mohsen's cage
+Completed tasks: Feed Buddy
+
+Whiskers' tasks: Feed Whiskers, Play with Whiskers
+Buddy's pending tasks: Walk Buddy
+
+Recurring: Give Buddy meds due 2026-07-01 [pending]
+  completed -> next instance due 2026-07-02 [pending]
+  completing again returns None (no duplicate created)
+
+Schedule conflicts:
+  - Conflict at 09:00: Groom Whiskers (Whiskers), Feed Mohsen (Mohsen) [different pets]
+  - Conflict at 17:30: Walk Buddy (Buddy), Brush Buddy (Buddy) [same pet]
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
